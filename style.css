@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f4f4f9;
+  position: relative;
+  overflow: hidden; 
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  z-index: 1;
+  pointer-events: none; 
+}
+
+.clock-container,
+footer {
+  position: relative;
+  z-index: 2; /* Supaya elemen utama tetap di atas overlay */
+}
+
+.clock-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.clock-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  color: blue;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 800;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+}
